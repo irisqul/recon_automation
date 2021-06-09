@@ -178,5 +178,5 @@ rm proxy.txt 2>/dev/null
 rm resolvers.txt 2>/dev/null 
 rm error_requests.txt 2>/dev/null
 for f in $(ls); do [ -s $f ] || rm $f 
-telegram-send "recon is finished"
+telegram-send "recon on $DOMAIN is finished"
 ;done
