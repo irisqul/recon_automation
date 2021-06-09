@@ -18,6 +18,7 @@ done
 mkdir $HOME/bounty/$DOMAIN -p
 cd $HOME/bounty/$DOMAIN
 
+while : do
 ### DOWNLOADING UP TO DATE LIST WITH RESOLVERS
 echo -e "\033[0;31m [+]\033[0m DOWNLOADING FRESH RESOLVERS"
 wget https://raw.githubusercontent.com/BonJarber/fresh-resolvers/main/resolvers.txt -O resolvers.txt > /dev/null 2>&1
@@ -176,4 +177,6 @@ rm 3rdlevel_probe.txt
 rm proxy.txt 2>/dev/null
 rm resolvers.txt 2>/dev/null 
 rm error_requests.txt 2>/dev/null
-for f in $(ls); do [ -s $f ] || rm $f ;done
+for f in $(ls); do [ -s $f ] || rm $f 
+telegram-send "recon is finished"
+;done
